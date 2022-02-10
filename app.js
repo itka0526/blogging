@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 
+const port = 3000;
+
 app.use(express.static("public"));
 app.use(express.json());
 
@@ -26,4 +28,4 @@ app.post("/newpost", cors({ origin: "*" }), (req, res) => {
     }
 });
 
-app.listen(3000);
+app.listen(process.env.PORT || port);
