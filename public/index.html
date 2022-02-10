@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Itgelt's blogging website</title>
+    </head>
+    <body>
+        <div>hello</div>
+        <script>
+            const fetchPosts = async () => {
+                const pending = await fetch("/posts");
+                const response = await pending.json();
+
+                console.log(response);
+            };
+        </script>
+    </body>
+</html>
