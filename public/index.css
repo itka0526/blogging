@@ -1,0 +1,42 @@
+body {
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+}
+#root {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column-reverse;
+    font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco,
+        "Bitstream Vera Sans Mono", monospace;
+    -webkit-font-smoothing: antialiased;
+}
+
+.post {
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 20px;
+
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+}
+
+.head-container {
+    display: flex;
+}
+.title {
+    padding-top: 10px;
+    padding-left: 20px;
+    flex-grow: 2;
+}
+.date {
+    flex-grow: 1;
+    text-align: center;
+}
+.paragraph {
+    margin: 0;
+    padding: 12px;
+}

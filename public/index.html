@@ -1,17 +1,47 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/png" href="icon.png" />
         <title>Itgelt's blogging website</title>
     </head>
     <body>
-        <div>hello</div>
+        <div id="root"></div>
+        <link rel="stylesheet" href="index.css" />
         <script>
             const fetchPosts = async () => {
                 const pending = await fetch("/posts");
                 const response = await pending.json();
 
-                console.log(response);
+                response.map((post_data) => {
+                    const { title, date, body } = post_data;
+                    const post = document.createElement("div");
+                    post.setAttribute("class", "post");
+
+                    const h3 = document.createElement("h3");
+                    h3.setAttribute("class", "title");
+                    h3.textContent = title;
+
+                    const h6 = document.createElement("h6");
+                    h6.setAttribute("class", "date");
+                    h6.textContent = date;
+
+                    const head = document.createElement("div");
+                    head.setAttribute("class", "head-container");
+                    head.append(h3);
+                    head.append(h6);
+
+                    const p = document.createElement("p");
+                    p.setAttribute("class", "paragraph");
+                    p.textContent = body;
+
+                    post.append(head);
+                    post.append(p);
+
+                    document.getElementById("root").append(post);
+                });
             };
+            fetchPosts();
         </script>
     </body>
 </html>
